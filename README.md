@@ -8,6 +8,7 @@ Deployed to [GitHub Pages](https://alternadiva.github.io/Formula1-Race-Calendar/
 - [ ] Fetch all upcoming races and render to DOM
 - [ ] Pair track graphics with circuits
 - [ ] Countdown till race starts
+- [ ] Search with POST data to server
 - [ ] Style DOM elements
 - [ ] Refactor code
 
