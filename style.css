@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(240, 231, 217);
+  text-align: center;
+}
+
+#current {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 200px;
+}
+
+#current > div {
+  width: 300px;
+  height: 300px;
+  border: 3px dashed black;
+}
