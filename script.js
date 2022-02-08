@@ -4,7 +4,7 @@ let nextRace = document.getElementById("next");
 window.addEventListener("load", loadEvents);
 
 function fetchLastRace() {
-    fetch("http://ergast.com/api/f1/current/last.json")
+    fetch("https://ergast.com/api/f1/current/last.json")
         .then((response) => {
             if (!response.ok) {
                 const error = new Error(response.status);
@@ -34,7 +34,7 @@ function fetchLastRace() {
 
 
 function fetchNextRace() {
-    fetch("http://ergast.com/api/f1/current/next.json")
+    fetch("https://ergast.com/api/f1/current/next.json")
         .then((response) => {
             if (!response.ok) {
                 const error = new Error(response.status);
