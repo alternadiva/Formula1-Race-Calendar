@@ -25,8 +25,7 @@ function fetchLastRace() {
             divContent += `
                 <p>${raceName}</p>
                 <p>${raceCircuit}</p>
-                <p>${raceDate}</p>
-                <p>${raceStart}</p>
+                <p>${new Date(`${raceDate} ${raceStart}`)}</p>
             `;
             previousRace.innerHTML = divContent;
             console.log(raceDataObj);
@@ -56,8 +55,7 @@ function fetchNextRace() {
             divContent += `
                 <p>${raceName}</p>
                 <p>${raceCircuit}</p>
-                <p>${raceDate}</p>
-                <p>${raceStart}</p>
+                <p>${new Date(`${raceDate} ${raceStart}`)}</p>
             `;
             nextRace.innerHTML = divContent;
             console.log(raceDataObj)
@@ -82,13 +80,11 @@ function fetchAllRaces() {
         let divContent = "";
         let racesDataArr = Array.from(data["MRData"]["RaceTable"]["Races"]);
         for (let i = 0; i < racesDataArr.length; i++) { 
-
              divContent += `
                 <div class="races" id="race${i}">
                     <p>${racesDataArr[i].raceName}</p>
                     <p>${racesDataArr[i].Circuit.circuitName}</p>
-                    <p>${racesDataArr[i].date}</p>
-                    <p>${racesDataArr[i].time}</p>
+                    <p>${new Date(`${racesDataArr[i].date} ${racesDataArr[i].time}`)}</p>
                 </div>
             `; 
         }
