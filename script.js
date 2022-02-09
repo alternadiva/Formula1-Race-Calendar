@@ -1,5 +1,6 @@
 let previousRace = document.getElementById("previous");
 let nextRace = document.getElementById("next");
+let allRaces = document.getElementById("full");
 
 window.addEventListener("load", loadEvents);
 
@@ -16,10 +17,11 @@ function fetchLastRace() {
         })
         .then((data) => {
             let divContent = "<h2>Last Race</h2>";
-            let raceName = data["MRData"]["RaceTable"]["Races"][0]["raceName"];
-            let raceCircuit = data["MRData"]["RaceTable"]["Races"][0]["Circuit"]["circuitName"];
-            let raceDate = data["MRData"]["RaceTable"]["Races"][0]["date"];
-            let raceStart = data["MRData"]["RaceTable"]["Races"][0]["time"];
+            let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
+            let raceName = raceDataObj["raceName"];
+            let raceCircuit = raceDataObj["Circuit"]["circuitName"];
+            let raceDate = raceDataObj["date"];
+            let raceStart = raceDataObj["time"];
             divContent += `
                 <p>${raceName}</p>
                 <p>${raceCircuit}</p>
@@ -27,7 +29,7 @@ function fetchLastRace() {
                 <p>${raceStart}</p>
             `;
             previousRace.innerHTML = divContent;
-            console.log(data["MRData"]["RaceTable"]["Races"][0])
+            console.log(raceDataObj);
         })
         .catch((error) => console.log(error));
 }
@@ -46,10 +48,11 @@ function fetchNextRace() {
         })
         .then((data) => {
             let divContent = "<h2>Next Race</h2>";
-            let raceName = data["MRData"]["RaceTable"]["Races"][0]["raceName"];
-            let raceCircuit = data["MRData"]["RaceTable"]["Races"][0]["Circuit"]["circuitName"];
-            let raceDate = data["MRData"]["RaceTable"]["Races"][0]["date"];
-            let raceStart = data["MRData"]["RaceTable"]["Races"][0]["time"];
+            let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
+            let raceName = raceDataObj["raceName"];
+            let raceCircuit = raceDataObj["Circuit"]["circuitName"];
+            let raceDate = raceDataObj["date"];
+            let raceStart = raceDataObj["time"];
             divContent += `
                 <p>${raceName}</p>
                 <p>${raceCircuit}</p>
@@ -57,16 +60,49 @@ function fetchNextRace() {
                 <p>${raceStart}</p>
             `;
             nextRace.innerHTML = divContent;
-            console.log(data["MRData"]["RaceTable"]["Races"][0])
+            console.log(raceDataObj)
 
             //countdown here!!
         })
         .catch((error) => console.log(error));
 }
 
+function fetchAllRaces() {
+    fetch("http://ergast.com/api/f1/2022.json")
+    .then((response) => {
+        if (!response.ok) {
+            const error = new Error(response.status);
+            throw error;
+        }
+        else {
+            return response.json();
+        }
+    })
+    .then((data) => {
+        let divContent = "";
+        let racesDataArr = Array.from(data["MRData"]["RaceTable"]["Races"]);
+        for (let i = 0; i < racesDataArr.length; i++) { 
+
+             divContent += `
+                <div class="races" id="race${i}">
+                    <p>${racesDataArr[i].raceName}</p>
+                    <p>${racesDataArr[i].Circuit.circuitName}</p>
+                    <p>${racesDataArr[i].date}</p>
+                    <p>${racesDataArr[i].time}</p>
+                </div>
+            `; 
+        }
+        allRaces.innerHTML = divContent;
+        console.log(racesDataArr);
+    })
+    .catch((error) => console.log(error));
+}
+
+
 function loadEvents() {
     fetchLastRace();
     fetchNextRace();
+    fetchAllRaces();
 }
 
 // Refine with promise all !!!
