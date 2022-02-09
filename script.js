@@ -66,7 +66,7 @@ function fetchNextRace() {
 }
 
 function fetchAllRaces() {
-    fetch("http://ergast.com/api/f1/2022.json")
+    fetch("https://ergast.com/api/f1/2022.json")
     .then((response) => {
         if (!response.ok) {
             const error = new Error(response.status);
