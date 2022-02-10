@@ -101,4 +101,12 @@ function loadEvents() {
     fetchAllRaces();
 }
 
+let form = document.getElementById("form");
+
+form.addEventListener("submit", searchAndPost);
+
+function searchAndPost(event) {
+    //event.preventDefault();
+}
+
 // Refine with promise all !!!
