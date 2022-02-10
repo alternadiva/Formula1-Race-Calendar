@@ -103,10 +103,18 @@ function loadEvents() {
 
 let form = document.getElementById("form");
 
-form.addEventListener("submit", searchAndPost);
+form.addEventListener("submit", searchRace);
 
-function searchAndPost(event) {
-    //event.preventDefault();
+function searchRace(event) {
+    event.preventDefault();
+
+    let findRace = document.getElementById("search").value;
+
+    const searchData = {
+        raceName: findRace
+    }
+
+
 }
 
 // Refine with promise all !!!
