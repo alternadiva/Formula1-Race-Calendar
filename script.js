@@ -65,6 +65,8 @@ function fetchNextRace() {
         .catch((error) => console.log(error));
 }
 
+let racesArr = [];
+
 function fetchAllRaces() {
     fetch("https://ergast.com/api/f1/2022.json")
     .then((response) => {
@@ -79,7 +81,13 @@ function fetchAllRaces() {
     .then((data) => {
         let divContent = "";
         let racesDataArr = Array.from(data["MRData"]["RaceTable"]["Races"]);
-        for (let i = 0; i < racesDataArr.length; i++) { 
+        for (let i = 0; i < racesDataArr.length; i++) {
+            let raceObject = {}; 
+            raceObject.raceName = racesDataArr[i].raceName;
+            raceObject.circuitName = racesDataArr[i].Circuit.circuitName;
+            raceObject.date = racesDataArr[i].date;
+            raceObject.time = racesDataArr[i].time;
+            racesArr.push(raceObject);
              divContent += `
                 <div class="races" id="race${i}">
                     <p>${racesDataArr[i].raceName}</p>
@@ -94,6 +102,8 @@ function fetchAllRaces() {
     .catch((error) => console.log(error));
 }
 
+console.log(racesArr);
+
 
 function loadEvents() {
     fetchLastRace();
@@ -103,18 +113,7 @@ function loadEvents() {
 
 let form = document.getElementById("form");
 
-form.addEventListener("submit", searchRace);
+//form.addEventListener("submit", searchRace);
 
-function searchRace(event) {
-    event.preventDefault();
-
-    let findRace = document.getElementById("search").value;
-
-    const searchData = {
-        raceName: findRace
-    }
-
-
-}
 
 // Refine with promise all !!!
