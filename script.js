@@ -102,6 +102,8 @@ function fetchAllRaces() {
     .catch((error) => console.log(error));
 }
 
+
+
 console.log(racesArr);
 
 
@@ -112,8 +114,47 @@ function loadEvents() {
 }
 
 let form = document.getElementById("form");
+let output = document.getElementById("output");
 
-//form.addEventListener("submit", searchRace);
+form.addEventListener("submit", searchRace);
+
+function searchRace(event) {
+    event.preventDefault();
+    let input = document.getElementById("search").value;
+    let filteredRaces = search(input);
+
+    output.innerHTML = "";
+    filteredRaces.forEach(race => {
+        let divContent = "";
+        divContent += `
+            <p>${race.raceName}</p>
+            <p>${race.circuitName}</p>
+            <p>${race.date}</p>
+            <p>${race.time}</p>
+            `;
+        output.innerHTML = divContent;
+    });
+
+}
+
+function search(value) {
+    if (typeof value !== "string" || value.length === 0) {
+        return racesArr;
+    }
+
+    let lowerCaseValue = value.toLowerCase();
+    let filtered = racesArr.filter(race => {
+        if (race.raceName.toLowerCase().includes(lowerCaseValue)) {
+            return true;
+        }
+        if (race.circuitName.toLowerCase().includes(lowerCaseValue)) {
+            return true;
+        }
+
+        return false;
+    })
+    return filtered;
+}
 
 
 // Refine with promise all !!!
