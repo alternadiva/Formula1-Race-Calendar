@@ -1,6 +1,15 @@
+html {
+  font-family: "Racing Sans One", cursive;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  background-color: rgb(240, 231, 217);
+  background-color: rgb(216, 215, 215);
   text-align: center;
+}
+
+.header-tag {
+  font-family: "Racing Sans One", cursive;
 }
 
 #current {
@@ -14,8 +23,10 @@ body {
 
 #current > div {
   width: 400px;
-  height: 200px;
-  border: 3px dashed black;
+  height: auto;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   overflow-wrap: normal;
 }
 
@@ -30,7 +41,39 @@ body {
 
 #full > div {
   width: 400px;
-  height: 150px;
-  border: 2px dashed black;
+  height: auto;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   overflow-wrap: normal;
+}
+
+.raceName {
+  font-family: "Racing Sans One", cursive;
+  font-size: 1.4em;
+}
+
+#form {
+  margin: 50px 0;
+}
+
+#search {
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+}
+
+#submit {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }

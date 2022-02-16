@@ -16,14 +16,14 @@ function fetchLastRace() {
             }
         })
         .then((data) => {
-            let divContent = "<h2>Last Race</h2>";
+            let divContent = "<h3>Last Race</h3>";
             let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
             let raceName = raceDataObj["raceName"];
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             divContent += `
-                <p>${raceName}</p>
+                <h3 class="header-tag">${raceName}</h3>
                 <p>${raceCircuit}</p>
                 <p>${new Date(`${raceDate} ${raceStart}`)}</p>
             `;
@@ -46,14 +46,14 @@ function fetchNextRace() {
             }
         })
         .then((data) => {
-            let divContent = "<h2>Next Race</h2>";
+            let divContent = "<h3>Next Race</h3>";
             let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
             let raceName = raceDataObj["raceName"];
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             divContent += `
-                <p>${raceName}</p>
+                <h3 class="header-tag">${raceName}</h3>
                 <p>${raceCircuit}</p>
                 <p>${new Date(`${raceDate} ${raceStart}`)}</p>
             `;
@@ -90,7 +90,7 @@ function fetchAllRaces() {
             racesArr.push(raceObject);
              divContent += `
                 <div class="races" id="race${i}">
-                    <p>${racesDataArr[i].raceName}</p>
+                    <p class="raceName">${racesDataArr[i].raceName}</p>
                     <p>${racesDataArr[i].Circuit.circuitName}</p>
                     <p>${new Date(`${racesDataArr[i].date} ${racesDataArr[i].time}`)}</p>
                 </div>
