@@ -74,7 +74,7 @@ let racesArr = [];
 function countDown(date, renderDOM) {
     let raceStart = date.getTime();
     let countDownDiv = document.createElement("p");
-    setInterval(function() {
+    let intervalCount = setInterval(function() {
         
         let currentTime = new Date().getTime();
         let difference = raceStart - currentTime;
@@ -87,6 +87,11 @@ function countDown(date, renderDOM) {
         let countDownDisplay = days + " days " + hours + ":" + minutes + ":" + seconds;
         countDownDiv.innerHTML = countDownDisplay;
         renderDOM.appendChild(countDownDiv);
+
+        if (difference < 0) {
+            clearInterval(intervalCount);
+            countDownDiv.innerHTML = `<a href="">Results</a>`;
+          }
     }, 1000); 
 }
 
