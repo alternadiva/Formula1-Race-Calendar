@@ -54,12 +54,14 @@ function fetchNextRace() {
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
+            
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
                 <p>${raceCircuit}</p>
                 <p>${dateTimeObject}</p>
             `;
             nextRace.innerHTML = divContent;
+            countDown(dateTimeObject, nextRace);
             console.log(raceDataObj)
 
             //countdown here!!
@@ -69,42 +71,26 @@ function fetchNextRace() {
 
 let racesArr = [];
 
-/* var x = setInterval(function countDown() {
-    let raceStart = new Date("Sun Mar 20 2022 16:00:00").getTime();
-    let currentTime = new Date().getTime();
-    let difference = raceStart - currentTime;
-
-    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    let countDownDisplay = days + " days " + hours + ":" + minutes + ":" + seconds;
-
-    console.log(countDownDisplay);
-
-    return countDownDisplay;
-}, 1000); */
-
-/* function countDown(date) {
+function countDown(date, renderDOM) {
     let raceStart = date.getTime();
-    let currentTime = new Date().getTime();
-    let difference = raceStart - currentTime;
+    let countDownDiv = document.createElement("p");
+    setInterval(function() {
+        
+        let currentTime = new Date().getTime();
+        let difference = raceStart - currentTime;
 
-    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    let countDownDisplay = days + " days " + hours + ":" + minutes + ":" + seconds;
-
-    console.log(countDownDisplay);
-
-    return countDownDisplay;
-} */
+        let countDownDisplay = days + " days " + hours + ":" + minutes + ":" + seconds;
+        countDownDiv.innerHTML = countDownDisplay;
+        renderDOM.appendChild(countDownDiv);
+    }, 1000); 
+}
 
 //countDown(new Date("Sun Mar 20 2022 16:00:00"));
-//setInterval(countDown(new Date("Sun Mar 20 2022 16:00:00")), 1000);
 
 function fetchAllRaces() {
     fetch("https://ergast.com/api/f1/2022.json")
