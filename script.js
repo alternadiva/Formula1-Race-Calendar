@@ -69,10 +69,42 @@ function fetchNextRace() {
 
 let racesArr = [];
 
-function countDown(date) {
-    let countDownDate = date.getTime();
+/* var x = setInterval(function countDown() {
+    let raceStart = new Date("Sun Mar 20 2022 16:00:00").getTime();
+    let currentTime = new Date().getTime();
+    let difference = raceStart - currentTime;
 
-}
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    let countDownDisplay = days + " days " + hours + ":" + minutes + ":" + seconds;
+
+    console.log(countDownDisplay);
+
+    return countDownDisplay;
+}, 1000); */
+
+/* function countDown(date) {
+    let raceStart = date.getTime();
+    let currentTime = new Date().getTime();
+    let difference = raceStart - currentTime;
+
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    let countDownDisplay = days + " days " + hours + ":" + minutes + ":" + seconds;
+
+    console.log(countDownDisplay);
+
+    return countDownDisplay;
+} */
+
+//countDown(new Date("Sun Mar 20 2022 16:00:00"));
+//setInterval(countDown(new Date("Sun Mar 20 2022 16:00:00")), 1000);
 
 function fetchAllRaces() {
     fetch("https://ergast.com/api/f1/2022.json")
