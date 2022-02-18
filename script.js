@@ -22,10 +22,11 @@ function fetchLastRace() {
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
+            let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
                 <p>${raceCircuit}</p>
-                <p>${new Date(`${raceDate} ${raceStart}`)}</p>
+                <p>${dateTimeObject}</p>
             `;
             previousRace.innerHTML = divContent;
             console.log(raceDataObj);
@@ -52,10 +53,11 @@ function fetchNextRace() {
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
+            let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
                 <p>${raceCircuit}</p>
-                <p>${new Date(`${raceDate} ${raceStart}`)}</p>
+                <p>${dateTimeObject}</p>
             `;
             nextRace.innerHTML = divContent;
             console.log(raceDataObj)
@@ -66,6 +68,11 @@ function fetchNextRace() {
 }
 
 let racesArr = [];
+
+function countDown(date) {
+    let countDownDate = date.getTime();
+
+}
 
 function fetchAllRaces() {
     fetch("https://ergast.com/api/f1/2022.json")
@@ -87,12 +94,13 @@ function fetchAllRaces() {
             raceObject.circuitName = racesDataArr[i].Circuit.circuitName;
             raceObject.date = racesDataArr[i].date;
             raceObject.time = racesDataArr[i].time;
+            let dateTimeObject = new Date(`${racesDataArr[i].date} ${racesDataArr[i].time}`);
             racesArr.push(raceObject);
              divContent += `
                 <div class="races" id="race${i}">
                     <p class="raceName">${racesDataArr[i].raceName}</p>
                     <p>${racesDataArr[i].Circuit.circuitName}</p>
-                    <p>${new Date(`${racesDataArr[i].date} ${racesDataArr[i].time}`)}</p>
+                    <p>${dateTimeObject}</p>
                 </div>
             `; 
         }
