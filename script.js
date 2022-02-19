@@ -18,14 +18,16 @@ function fetchLastRace() {
         .then((data) => {
             let divContent = "<h3>Last Race</h3>";
             let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
+            console.log(raceDataObj);
             let raceName = raceDataObj["raceName"];
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
+            let raceLocality = raceDataObj["Circuit"]["Location"]["locality"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
-                <p>${raceCircuit}</p>
+                <p>${raceCircuit}, ${raceLocality}</p>
                 <p>${dateTimeObject}</p>
             `;
             previousRace.innerHTML = divContent;
@@ -52,13 +54,14 @@ function fetchNextRace() {
             let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
             let raceName = raceDataObj["raceName"];
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
+            let raceLocality = raceDataObj["Circuit"]["Location"]["locality"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
             
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
-                <p>${raceCircuit}</p>
+                <p>${raceCircuit}, ${raceLocality}</p>
                 <p>${dateTimeObject}</p>
             `;
             nextRace.innerHTML = divContent;
@@ -116,19 +119,22 @@ function fetchAllRaces() {
             let raceObject = {}; 
             raceObject.raceName = racesDataArr[i].raceName;
             raceObject.circuitName = racesDataArr[i].Circuit.circuitName;
+            raceObject.raceLocality = racesDataArr[i].Circuit.Location.locality;
             raceObject.date = racesDataArr[i].date;
             raceObject.time = racesDataArr[i].time;
             let dateTimeObject = new Date(`${racesDataArr[i].date} ${racesDataArr[i].time}`);
             racesArr.push(raceObject);
-             divContent += `
+            divContent += `
                 <div class="races" id="race${i}">
-                    <p class="raceName">${racesDataArr[i].raceName}</p>
-                    <p>${racesDataArr[i].Circuit.circuitName}</p>
+                    <p class="raceName">${raceObject.raceName}</p>
+                    <p>${raceObject.circuitName}, ${raceObject.raceLocality}</p>
                     <p>${dateTimeObject}</p>
                 </div>
-            `; 
+            `;
         }
         allRaces.innerHTML = divContent;
+        let racesDivs = allRaces.querySelectorAll(".races");
+        console.log(racesDivs[0])
         console.log(racesDataArr);
     })
     .catch((error) => console.log(error));
