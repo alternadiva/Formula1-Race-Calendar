@@ -2,94 +2,94 @@
 export let circuitInfo = [
     {
         circuitName: "Bahrain International Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Bahrain_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/bahrain.png"
     },
     {
         circuitName: "Jeddah Corniche Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Saudi_Arabia_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/checkered-flag.png"
     },
     {
         circuitName: "Albert Park Grand Prix Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Australia_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/melbourne.png"
     },
     {
         circuitName: "Autodromo Enzo e Dino Ferrari",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Emilia_Romagna_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/checkered-flag.png"
     },
     {
         circuitName: "Miami International Autodrome",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Miami_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/checkered-flag.png"
     },
     {
         circuitName: "Circuit de Barcelona-Catalunya",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Spain_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/barcelona.png"
     },
     {
         circuitName: "Circuit de Monaco",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Monoco_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/monaco.png"
     },
     {
         circuitName: "Baku City Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Baku_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/baku.png"
     },
     {
         circuitName: "Circuit Gilles Villeneuve",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Canada_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/checkered-flag.png"
     },
     {
         circuitName: "Silverstone Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Great_Britain_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/silverstone.png"
     },
     {
         circuitName: "Red Bull Ring",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Austria_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/redbullring.png"
     },
     {
         circuitName: "Circuit Paul Ricard",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/France_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/paul-ricard.png"
     },
     {
         circuitName: "Hungaroring",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Hungary_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/hungaroring.png"
     },
     {
         circuitName: "Circuit de Spa-Francorchamps",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Belgium_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/spa.png"
     },
     {
         circuitName: "Circuit Park Zandvoort",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Netherlands_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/checkered-flag.png"
     },
     {
         circuitName: "Autodromo Nazionale di Monza",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Italy_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/monza.png"
     },
     {
         circuitName: "Sochi Autodrom",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Russia_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/sochi.png"
     },
     {
         circuitName: "Marina Bay Street Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/manual/races/Singapore/singapore_track.png.transform/7col/image.png"
+        circuitImg: "./assets/singapore.png"
     },
     {
         circuitName: "Suzuka Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Japan_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/suzuka.png"
     },
     {
         circuitName: "Circuit of the Americas",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/USA_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/americas.png"
     },
     {
         circuitName: "Autódromo Hermanos Rodríguez",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Mexico_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/checkered-flag.png"
     },
     {
         circuitName: "Autódromo José Carlos Pace",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Brazil_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/brazil.png"
     },
     {
         circuitName: "Yas Marina Circuit",
-        circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Abu_Dhabi_Circuit.png.transform/7col/image.png"
+        circuitImg: "./assets/abudhabi.png"
     }
 ]

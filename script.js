@@ -3,8 +3,6 @@ let nextRace = document.getElementById("next");
 let allRaces = document.getElementById("full");
 import {circuitInfo} from "./circuits.js";
 
-console.log(circuitInfo);
-
 window.addEventListener("load", loadEvents);
 
 function fetchLastRace() {
@@ -21,17 +19,23 @@ function fetchLastRace() {
         .then((data) => {
             let divContent = "<h3>Last Race</h3>";
             let raceDataObj = data["MRData"]["RaceTable"]["Races"][0];
-            console.log(raceDataObj);
             let raceName = raceDataObj["raceName"];
             let raceCircuit = raceDataObj["Circuit"]["circuitName"];
             let raceLocality = raceDataObj["Circuit"]["Location"]["locality"];
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
+            let circuitImg;
+            for (let i = 0; i < circuitInfo.length; i++) {
+                if (circuitInfo[i].circuitName === raceCircuit) {
+                    circuitImg = circuitInfo[i].circuitImg;
+                }
+            }
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
+                <a href="${circuitImg}"><img src="${circuitImg}" alt="${raceCircuit}" class="circuit-img"></a>
                 <p>${raceCircuit}, ${raceLocality}</p>
-                <p>${dateTimeObject}</p>
+                <p>${dateTimeObject}</p> 
             `;
             previousRace.innerHTML = divContent;
             countDown(dateTimeObject, previousRace);
@@ -61,9 +65,15 @@ function fetchNextRace() {
             let raceDate = raceDataObj["date"];
             let raceStart = raceDataObj["time"];
             let dateTimeObject = new Date(`${raceDate} ${raceStart}`);
-            
+            let circuitImg;
+            for (let i = 0; i < circuitInfo.length; i++) {
+                if (circuitInfo[i].circuitName === raceCircuit) {
+                    circuitImg = circuitInfo[i].circuitImg;
+                }
+            }
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
+                <img src="${circuitImg}" alt="${raceCircuit}" class="circuit-img">
                 <p>${raceCircuit}, ${raceLocality}</p>
                 <p>${dateTimeObject}</p>
             `;
@@ -127,9 +137,16 @@ function fetchAllRaces() {
             raceObject.time = racesDataArr[i].time;
             let dateTimeObject = new Date(`${racesDataArr[i].date} ${racesDataArr[i].time}`);
             racesArr.push(raceObject);
+            let circuitImg;
+            for (let j = 0; j < circuitInfo.length; j++) {
+                if (circuitInfo[j].circuitName === raceObject.circuitName) {
+                    circuitImg = circuitInfo[j].circuitImg;
+                }
+            }
             divContent += `
                 <div class="races" id="race${i}">
                     <p class="raceName">${raceObject.raceName}</p>
+                    <img src="${circuitImg}" alt="${raceObject.circuitName}" class="circuit-img">
                     <p>${raceObject.circuitName}, ${raceObject.raceLocality}</p>
                     <p>${dateTimeObject}</p>
                 </div>
