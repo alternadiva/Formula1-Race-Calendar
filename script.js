@@ -29,6 +29,7 @@ function fetchLastRace() {
                 <p>${dateTimeObject}</p>
             `;
             previousRace.innerHTML = divContent;
+            countDown(dateTimeObject, previousRace);
             console.log(raceDataObj);
         })
         .catch((error) => console.log(error));
