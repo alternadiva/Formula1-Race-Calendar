@@ -1,6 +1,9 @@
 let previousRace = document.getElementById("previous");
 let nextRace = document.getElementById("next");
 let allRaces = document.getElementById("full");
+import {circuitInfo} from "./circuits.js";
+
+console.log(circuitInfo);
 
 window.addEventListener("load", loadEvents);
 

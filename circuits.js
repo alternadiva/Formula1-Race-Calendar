@@ -1,6 +1,5 @@
 
-
-let circuitInfo = [
+export let circuitInfo = [
     {
         circuitName: "Bahrain International Circuit",
         circuitImg: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Bahrain_Circuit.png.transform/7col/image.png"
