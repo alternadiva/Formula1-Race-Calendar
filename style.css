@@ -10,24 +10,41 @@ body {
 
 .header-tag {
   font-family: "Racing Sans One", cursive;
+  color: rgb(51, 51, 51);
+}
+
+#index-title {
+  margin: 40px auto 60px auto;
 }
 
 .circuit-img {
-  max-width: 320px;
-  max-height: 250px;
+  max-width: 190px;
+  max-height: 200px;
+  display: block;
+  margin: 0 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.img-container {
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 10px auto;
 }
 
 #current {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   width: 100%;
   justify-content: center;
-  gap: 200px;
+  gap: 15vw;
 }
 
 #current > div {
-  width: 400px;
+  width: 455px;
   height: auto;
   background-color: white;
   border-radius: 25px;
@@ -35,17 +52,36 @@ body {
   overflow-wrap: normal;
 }
 
+.race-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.race-info {
+  display: block;
+  margin: 0 auto;
+  width: 230px;
+}
+
+.line {
+  border-left: 3px solid rgba(0, 0, 0, 0.2);
+  height: 210px;
+}
+
 #full {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 50px;
+  margin: 0 10px;
   justify-content: center;
-  gap: 50px;
+  gap: 1.35vw;
+  row-gap: 4vh;
 }
 
 #full > div {
-  width: 400px;
+  width: 455px;
+  min-height: 290px;
   height: auto;
   background-color: white;
   border-radius: 25px;

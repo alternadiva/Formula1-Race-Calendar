@@ -33,12 +33,20 @@ function fetchLastRace() {
             }
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
-                <a href="${circuitImg}"><img src="${circuitImg}" alt="${raceCircuit}" class="circuit-img"></a>
-                <p>${raceCircuit}, ${raceLocality}</p>
-                <p>${dateTimeObject}</p> 
+                <div class="race-flex">
+                    <div class="img-container">
+                        <a href="${circuitImg}"><img src="${circuitImg}" alt="${raceCircuit}" class="circuit-img"></a>
+                    </div> 
+                    <div class="line"></div>
+                    <div class="race-info" id="prev-info">
+                        <p>${raceCircuit}, ${raceLocality}</p>
+                        <p>${dateTimeObject}</p>
+                    </div>
+                </div>  
             `;
             previousRace.innerHTML = divContent;
-            countDown(dateTimeObject, previousRace);
+            let prevRaceInfo = document.getElementById("prev-info");
+            countDown(dateTimeObject, prevRaceInfo);
             console.log(raceDataObj);
         })
         .catch((error) => console.log(error));
@@ -73,12 +81,20 @@ function fetchNextRace() {
             }
             divContent += `
                 <h3 class="header-tag">${raceName}</h3>
-                <img src="${circuitImg}" alt="${raceCircuit}" class="circuit-img">
-                <p>${raceCircuit}, ${raceLocality}</p>
-                <p>${dateTimeObject}</p>
+                <div class="race-flex">
+                    <div class="img-container">
+                        <a href="${circuitImg}"><img src="${circuitImg}" alt="${raceCircuit}" class="circuit-img"></a>
+                    </div>
+                    <div class="line"></div> 
+                    <div class="race-info" id="next-info">
+                        <p>${raceCircuit}, ${raceLocality}</p>
+                        <p>${dateTimeObject}</p>
+                    </div>
+                </div>
             `;
             nextRace.innerHTML = divContent;
-            countDown(dateTimeObject, nextRace);
+            let nextRaceInfo = document.getElementById("next-info");
+            countDown(dateTimeObject, nextRaceInfo);
             console.log(raceDataObj)
 
             //countdown here!!
@@ -146,9 +162,16 @@ function fetchAllRaces() {
             divContent += `
                 <div class="races" id="race${i}">
                     <p class="raceName">${raceObject.raceName}</p>
-                    <img src="${circuitImg}" alt="${raceObject.circuitName}" class="circuit-img">
-                    <p>${raceObject.circuitName}, ${raceObject.raceLocality}</p>
-                    <p>${dateTimeObject}</p>
+                    <div class="race-flex">
+                        <div class="img-container">
+                            <img src="${circuitImg}" alt="${raceObject.circuitName}" class="circuit-img">
+                        </div> 
+                        <div class="line"></div>
+                        <div class="race-info" id="current-info${i}">
+                            <p>${raceObject.circuitName}, ${raceObject.raceLocality}</p>
+                            <p>${dateTimeObject}</p>
+                        </div>
+                    </div>
                 </div>
             `;
         }

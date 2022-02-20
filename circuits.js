@@ -6,7 +6,7 @@ export let circuitInfo = [
     },
     {
         circuitName: "Jeddah Corniche Circuit",
-        circuitImg: "./assets/checkered-flag.png"
+        circuitImg: "./assets/no-img.png"
     },
     {
         circuitName: "Albert Park Grand Prix Circuit",
@@ -14,11 +14,11 @@ export let circuitInfo = [
     },
     {
         circuitName: "Autodromo Enzo e Dino Ferrari",
-        circuitImg: "./assets/checkered-flag.png"
+        circuitImg: "./assets/no-img.png"
     },
     {
         circuitName: "Miami International Autodrome",
-        circuitImg: "./assets/checkered-flag.png"
+        circuitImg: "./assets/no-img.png"
     },
     {
         circuitName: "Circuit de Barcelona-Catalunya",
@@ -34,7 +34,7 @@ export let circuitInfo = [
     },
     {
         circuitName: "Circuit Gilles Villeneuve",
-        circuitImg: "./assets/checkered-flag.png"
+        circuitImg: "./assets/no-img.png"
     },
     {
         circuitName: "Silverstone Circuit",
@@ -58,7 +58,7 @@ export let circuitInfo = [
     },
     {
         circuitName: "Circuit Park Zandvoort",
-        circuitImg: "./assets/checkered-flag.png"
+        circuitImg: "./assets/no-img.png"
     },
     {
         circuitName: "Autodromo Nazionale di Monza",
@@ -82,7 +82,7 @@ export let circuitInfo = [
     },
     {
         circuitName: "Autódromo Hermanos Rodríguez",
-        circuitImg: "./assets/checkered-flag.png"
+        circuitImg: "./assets/no-img.png"
     },
     {
         circuitName: "Autódromo José Carlos Pace",
