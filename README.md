@@ -5,10 +5,10 @@ Fetch API practice with Formula 1 data API in progress... 🏁
 Deployed to [GitHub Pages](https://alternadiva.github.io/Formula1-Race-Calendar/)
 
 ### Next steps
-- [ ] Fetch all upcoming races and render to DOM
-- [ ] Pair track graphics with circuits
+- [X] Fetch all upcoming races and render to DOM
+- [X] Pair track graphics with circuits
 - [ ] Countdown til race starts
-- [ ] Search with POST data to server
+- [ ] Search with data
 - [ ] Style DOM elements
 - [ ] Refactor code
 
